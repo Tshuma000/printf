@@ -13,6 +13,7 @@ int print_string(va_list print_list);
 int print_percent(va_list print_list);
 int print_char(va_list print_list);
 int print_number(va_list);
+int print_integer(va_list);
 int unsigned_integer(va_list);
 int _write_char(char c);
 

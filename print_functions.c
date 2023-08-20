@@ -44,7 +44,6 @@ int print_percent(__attribute__((unused))va_list print_list)
  * @print_list: list of arguments
  * Return: Will return the amount of characters printed.
  */
-/*
 int print_integer(va_list print_list)
 {
 	int number_length;
@@ -52,7 +51,6 @@ int print_integer(va_list print_list)
 	number_length = print_number(print_list);
 	return (number_length);
 }
-*/
 
 
 /**
@@ -68,10 +66,10 @@ int unsigned_integer(va_list print_list)
 	num = va_arg(print_list, unsigned int);
 
 	if (num == 0)
-		return (unsigned_integer(num));
+		return (print_unsgined_number(num));
 
 	if (num < 1)
 		return (-1);
-	return (unsigned_integer(num));
+	return (print_unsgined_number(num));
 }
 */
