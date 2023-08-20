@@ -1,59 +1,48 @@
 #include "main.h"
-#include <unistd.h>
 
 /**
- * _printf - prints to the standard output
- * @format: format spercifier
- * @...: variadic argument
- *
- * Return: The number of characters printed.
+ * _printf - prints to standard output
+ * @format: A string containing format specifier.
+ * Return: A total count of the characters printed
  */
-
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	va_list myprintf;
-
-	va_start(myprintf, format);
+	int count, i = 0, n;
+	va_list print_list;
+	int (*f)(va_list);
 
 	if (format == NULL)
 		return (-1);
-	while (*format)
+
+	va_start(print_list, format);
+	while (format[i] != '\0')
 	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
-			count += write(1, format, 1);
+			count += write(1, &format[i], 1);
+			i++;
 		}
 		else
 		{
-			format++;
-			if (*format == '\0')
+			f = check_format(&format[i + 1]);
+			if (f != NULL)
+			{
+				n = f(print_list);
+				count += n;
+				i = i + 2;
+				continue;
+			}
+			if (format[i + 1] == '\0')
 				break;
-			if (*format == '%')
+			if (format[i + 1] != '\0')
 			{
-				count += write(1, format, 1);
+				count += write(1, &format[i + 1], 1);
+				continue;
+				i += 2;
 			}
-			else if (*format == 'c')
-			{
-				char c;
-				
-				c = (char)va_arg(myprintf, int);
-				count += write(1, &c, 1);
-			
-			}
-			else if (*format == 's')
-			{
-				char *string = va_arg(myprintf, char *);
-				int string_len = 0;
-				
-				while (string[string_len] != '\0')
-					string_len++;
-				count += write(1, string, string_len);
-			}
-		}
-		format++;
-	}
 
-	va_end(myprintf);
+		}
+	}
+	va_end(print_list);
 	return (count);
 }

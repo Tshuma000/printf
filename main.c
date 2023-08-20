@@ -17,7 +17,7 @@ int main(void)
 	printf("i printed %d characters\n", count_std);
 	write(1, "SELF_MADE:\n", 11);
 
-	count_hmd = _printf("My name is: %s\n", "tshumelo");
+	count_hmd = _printf("My name is: %%\n", '%');
 	printf("\ni printed %d characters", count_hmd);
 
 	return (0);
