@@ -36,18 +36,24 @@ int _printf(const char *format, ...)
 			else if (*format == 'c')
 			{
 				char c;
-
-				c = (char)va_arg(myprintf, int);
-				count += write(1, &c, 1);
+				
+				if (c)
+				{
+					c = (char)va_arg(myprintf, int);
+					count += write(1, &c, 1);
+				}
 			}
 			else if (*format == 's')
 			{
 				char *string = va_arg(myprintf, char *);
 				int string_len = 0;
-
-				while (string[string_len] != '\0')
-					string_len++;
-				count += write(1, string, string_len);
+				
+				if (string)
+				{
+					while (string[string_len] != '\0')
+						string_len++;
+					count += write(1, string, string_len);
+				}
 			}
 		}
 		format++;
