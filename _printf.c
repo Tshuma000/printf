@@ -11,43 +11,52 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, n;
 	int count = 0;
 	va_list myprintf;
-	int (*f)(va_list);
 
 	va_start(myprintf, format);
 
 	if (format == NULL)
 		return (-1);
-	while (format[i] != '\0')
+	while (*format)
 	{
-		if (format[i] != '%')
+		if (*format != '%')
 		{
-			count += write(1, &format[i], 1);
-			i++;
-			continue;
+			write(1, format, 1);
+			count++;
 		}
-		if (format[i] == '%')
+		else
 		{
-			f = check_format(&format[i + 1]);
-			if (f != NULL)
-			{
-				n = f(myprintf);
-				count += n;
-				i = i + 2;
-				continue;
-			}
-			if (format[i + 1] == '\0')
+			format++;
+			if (*format == '\0')
 				break;
-			if (format[i + 1] == '\0')
+			if (*format == '%')
 			{
-				count += write(1, &format[i + 1], 1);
-				continue;
-				i += 2;
+				write(1, format, 1);
+				count++;
+			}
+			else if (*format == 'c')
+			{
+				char c;
+
+				c = (char)va_arg(myprintf, int);
+				write(1, &c, 1);
+				count++;
+			}
+			else if (*format == 's')
+			{
+				char *string = va_arg(myprintf, char *);
+				int string_len = 0;
+
+				while (string[string_len] != '\0')
+					string_len++;
+				write(1, string, string_len);
+				count++;
 			}
 		}
+		format++;
 	}
+	va_end(myprintf);
 	return (count);
 
 }
