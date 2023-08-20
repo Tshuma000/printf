@@ -22,8 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			count++;
+			count += write(1, format, 1);
 		}
 		else
 		{
@@ -32,16 +31,14 @@ int _printf(const char *format, ...)
 				break;
 			if (*format == '%')
 			{
-				write(1, format, 1);
-				count++;
+				count += write(1, format, 1);
 			}
 			else if (*format == 'c')
 			{
 				char c;
 
 				c = (char)va_arg(myprintf, int);
-				write(1, &c, 1);
-				count++;
+				count += write(1, &c, 1);
 			}
 			else if (*format == 's')
 			{
@@ -50,8 +47,7 @@ int _printf(const char *format, ...)
 
 				while (string[string_len] != '\0')
 					string_len++;
-				write(1, string, string_len);
-				count++;
+				count += write(1, string, string_len);
 			}
 		}
 		format++;
