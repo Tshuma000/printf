@@ -1,22 +1,6 @@
 #include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
- */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
 
+/************************* PRINT UNSIGNED NUMBER *************************/
 /**
  * print_unsigned - Prints an unsigned number
  * @types: List a of arguments
@@ -42,25 +26,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	while (num > 0)
 	{
-#include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
- */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
-buffer[i--] = (num % 10) + '0';
+		buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
 
@@ -85,43 +51,7 @@ int print_octal(va_list types, char buffer[],
 {
 
 	int i = BUFF_SIZE - 2;
-#include "main.h"
-
-/************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
-/**
- * print_octal - Prints an unsigned number in octal notation
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
- */
-int print_octal(va_list types, char buffer[],
-	int flags, int width, int precision, int size)
-{
-
-	int i = BUFF_SIZE - 2;
-#include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
- */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
-unsigned long int num = va_arg(types, unsigned long int);
+	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
 
 	UNUSED(width);
@@ -146,24 +76,7 @@ unsigned long int num = va_arg(types, unsigned long int);
 
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
-#include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
- */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
+
 /************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
 /**
  * print_hexadecimal - Prints an unsigned number in hexadecimal notation
@@ -188,24 +101,6 @@ int print_hexadecimal(va_list types, char buffer[],
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
-#include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
- */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -231,25 +126,7 @@ int print_hexa_upper(va_list types, char buffer[],
  * @size: Size specifier
  * @size: Size specification
  * Return: Number of chars printed
-#include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
  */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
-*/
 int print_hexa(va_list types, char map_to[], char buffer[],
 	int flags, char flag_ch, int width, int precision, int size)
 {
@@ -274,25 +151,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 
 	if (flags & F_HASH && init_num != 0)
 	{
-#include "main.h"
-/************************* WRITE HANDLE *************************/
-/**
- * handle_write_char - Prints a string
- * @c: char types.
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
- * @width: get width.
- * @precision: precision specifier
- * @size: Size specifier
- *
- * Return: Number of chars printed.
- */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
-	int i = 0;
-	char padd = ' ';
-buffer[i--] = flag_ch;
+		buffer[i--] = flag_ch;
 		buffer[i--] = '0';
 	}
 
