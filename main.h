@@ -18,7 +18,6 @@ int write_number(va_list);
 int print_octal(va_list print_list);
 int print_hex(va_list print_list);
 int print_heX(va_list print_list);
-int hex_check(int num, char x);
 int print_unsgined_number(unsigned int n);
 char *rev_string(char *);
 int print_binary(va_list print_list);
