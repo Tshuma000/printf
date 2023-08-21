@@ -48,7 +48,7 @@ int print_integer(va_list print_list)
 {
 	int number_length;
 
-	number_length = print_number(print_list);
+	number_length = write_number(print_list);
 	return (number_length);
 }
 
