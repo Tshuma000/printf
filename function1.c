@@ -179,7 +179,6 @@ int print_heX(va_list print_list)
  * @x: Tells which hex function is calling it
  * Return: Ascii value for a letter
  */
-/*
 int hex_check(int num, char x)
 {
 	char *hex = "abcdef";
@@ -192,4 +191,3 @@ int hex_check(int num, char x)
 		return (Hex[num]);
 	return (0);
 }
-*/
