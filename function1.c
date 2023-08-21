@@ -55,7 +55,7 @@ int print_octal(va_list print_list)
 	char *octal_rep;
 	char *rev_str;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(print_list, unsigned int);
 
 	if (num == 0)
 		return (_write_char('0'));
@@ -96,7 +96,7 @@ int print_hex(va_list print_list)
 	char *hex_rep;
 	char *rev_hex;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(print_list, unsigned int);
 
 	if (num == 0)
 		return (_write_char('0'));

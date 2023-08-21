@@ -14,7 +14,7 @@ int print_percent(__attribute__((unused))va_list print_list);
 int print_integer(va_list print_list);
 int unsigned_integer(va_list print_list);
 int _write_char(char c);
-int write_number(va_list);
+int write_number(va_list print_list);
 int print_octal(va_list print_list);
 int print_hex(va_list print_list);
 int print_heX(va_list print_list);
