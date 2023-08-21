@@ -18,6 +18,10 @@ int (*check_format(const char *format))(va_list)
 		{"i", print_integer},
 		{"d", print_integer},
 		{"b", print_binary},
+		{"u", unsigned_integer},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_heX},
 		{NULL, NULL}
 		};
 	for (i = 0; my_array[i].type != NULL; i++)
