@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 
+int print_binary(va_list print_list);
 int _printf(const char *format, ...);
 int (*check_format(const char *format))(va_list);
 int print_char(va_list print_list);

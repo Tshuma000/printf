@@ -17,6 +17,7 @@ int (*check_format(const char *format))(va_list)
 		{"%", print_percent},
 		{"i", print_integer},
 		{"d", print_integer},
+		{"b", print_binary},
 		{NULL, NULL}
 		};
 	for (i = 0; my_array[i].type != NULL; i++)
