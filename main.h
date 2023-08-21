@@ -16,6 +16,10 @@ int unsigned_integer(va_list print_list);
 int _write_char(char c);
 int write_number(va_list args);
 int print_unsgined_number(unsigned int n);
+char *rev_string(char *s);
+void write_base(char *str);
+unsigned int base_len(unsigned int num, int base);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 /**
  * struct func - Struct for specifier print
