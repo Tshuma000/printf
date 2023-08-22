@@ -44,8 +44,8 @@ long int convert_size_unsgnd(unsigned long int num, int size);
 long int convert_size_number(long int num, int size);
 int append_hexa_code(char ascii_code, char buffer[], int i);
 int is_printable(char c);
-int printf_rot13(va_list print_list)
-
+int printf_rot13(va_list print_list);
+int _putchar(char c);
 
 /**
  * struct func - Struct for specifier print

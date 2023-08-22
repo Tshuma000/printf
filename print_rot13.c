@@ -22,14 +22,14 @@ int printf_rot13(va_list print_list)
 		{
 			if (s[i] == alpha[j])
 			{
-				putchar(beta[j]);
+				_putchar(beta[j]);
 				counter++;
 				k = 1;
 			}
 		}
 		if (!k)
 		{
-			putchar(s[i]);
+			_putchar(s[i]);
 			counter++;
 		}
 	}
