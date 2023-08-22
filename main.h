@@ -38,7 +38,7 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 int get_flags(const char *format, int *i);
 int get_precision(const char *format, int *i, va_list print_list);
 int is_digit(char c);
-int get_width(const char *format, int *i, va_list list);
+int get_width(const char *format, int *i, va_list print_list);
 int get_size(const char *format, int *i);
 long int convert_size_unsgnd(unsigned long int num, int size);
 long int convert_size_number(long int num, int size);
