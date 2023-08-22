@@ -21,8 +21,9 @@ int (*check_format(const char *format))(va_list)
 		{"u", unsigned_integer},
 		{"o", print_octal},
 		{"x", print_hex},
-		{"X", print_heX}
+		{"X", print_heX},
 		{"R", printf_rot13},
+		{"r", rev_string},
 		{NULL, NULL}
 		};
 	for (i = 0; my_array[i].type != NULL; i++)
