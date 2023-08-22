@@ -24,6 +24,8 @@ int print_binary(va_list print_list);
 void write_base(char *str);
 unsigned int base_len(unsigned int num, int base);
 char *_memcpy(char *dest, char *src, unsigned int n);
+int get_width(const char *format, int *i, va_list print_list);
+int is_digit(char c);
 
 /**
  * struct func - Struct for specifier print
