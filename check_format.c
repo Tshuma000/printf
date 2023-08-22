@@ -22,6 +22,7 @@ int (*check_format(const char *format))(va_list)
 		{"o", print_octal},
 		{"x", print_hex},
 		{"X", print_heX},
+		{"r", printf_srev},
 		{"R", printf_rot13},
 		{NULL, NULL}
 		};

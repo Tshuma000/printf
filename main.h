@@ -46,6 +46,7 @@ int append_hexa_code(char ascii_code, char buffer[], int i);
 int is_printable(char c);
 int printf_rot13(va_list print_list);
 int _putchar(char c);
+int printf_srev(va_list print_list);
 
 /**
  * struct func - Struct for specifier print
